@@ -1,0 +1,39 @@
+<!--Register form html view using handlebars -->
+
+<script src="/public/js/register.js"></script>
+<div>
+<h1>Login to timerapp</h1>
+</div>
+
+                {{#if registererror}}
+                    <div class="alert alert-danger" id="registererror">{{registererror}}
+                    </div>
+                {{/if}}
+                <div class="alert alert-danger" id="error"></div>
+
+
+<div>
+<form method="post" action="/registerform" name="form" id="form"enctype="application/json" onsubmit="return submitLog()">
+
+<div class="panel-body form-horizontal">
+<div class="form-group">
+    <label for="username" data-toggle="tooltip">Username:</label>
+    <input type="text" class="form-control" name="username" id="username" value="{{ username }}" data-toggle="tooltip">
+</div>
+<div class="form-group">
+    <label for="password" data-toggle="tooltip">Password:</label>
+    <input type="password" class="form-control" name="password" id="password" data-toggle="tooltip">
+</div>
+<div class="form-group">
+    <label for="password" data-toggle="tooltip">Password:</label>
+    <input type="password" class="form-control" name="password2" id="password2" data-toggle="tooltip">
+</div>
+<div class="form-group">
+    <label for="email" data-toggle="tooltip">Email:</label>
+    <input type="text" class="form-control" name="email" id="email" data-toggle="tooltip">
+</div>
+
+</div>
+<button type="submit" class="btn btn-default" id="submitbuttonReg">Submit</button>
+</form>
+</div>
