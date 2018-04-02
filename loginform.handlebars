@@ -1,0 +1,28 @@
+<!--//Heres the loginForm view, I used handlebars -->
+
+<script src="/public/js/login.js"></script>
+<div>
+<h1>Login to timerapp</h1>
+</div>
+<div class="alert alert-danger" id="errormsg">Invalid username or password</div>
+{{#if errorMessage}}
+            <div class="alert alert-danger" id="errorMessage">{{errorMessage}}</div>
+        {{/if}}
+
+<div>
+<form method="post" action="/loginform" name="form" id="loginForm" enctype="application/json" onsubmit="return submitLog()">
+
+<div class="panel-body form-horizontal">
+<div class="form-group">
+    <label for="username" data-toggle="tooltip">Username:</label>
+    <input type="text" class="form-control" name="username" id="username" data-toggle="tooltip">
+</div>
+<div class="form-group">
+    <label for="password" data-toggle="tooltip">Password:</label>
+    <input type="password" class="form-control" name="password" id="password" data-toggle="tooltip">
+</div>
+</div>
+<button type="submit" class="btn btn-default" id="submitbutton">Submit</button><br>
+<a href="/registerform">Register new account</a>
+</form>
+</div>
